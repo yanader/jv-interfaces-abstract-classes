@@ -1,13 +1,19 @@
-public class Car extends Vehicle implements Drivable{
+public class Spaceship extends Vehicle implements Flyable, Floatable{
+    @Override
+    public void floating() {
+        System.out.println("The spaceship floats in space");
+    }
 
-    public Car(int speed) {
-        super(speed);
+    @Override
+    public void fly() {
+        System.out.println("The rocket takes off");
     }
 
     @Override
     void move() {
-        System.out.println("The car is driving!");
+        System.out.println("The spaceship begins takeoff");
     }
+
 
     @Override
     public int getSpeed() {
@@ -23,6 +29,7 @@ public class Car extends Vehicle implements Drivable{
     public Direction getDirection() {
         return this.direction;
     }
+
     @Override
     public void setPosition(int xOffset, int yOffset) {
         this.position[0] += xOffset;
